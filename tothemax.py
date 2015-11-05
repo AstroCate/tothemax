@@ -15,11 +15,11 @@ try:
 
 	# Truncate to avoid server limit
 	if imgnum > 75:
-		print 'You are likely to have trouble with URL length... truncating to 75!'
+		print ('You are likely to have trouble with URL length... truncating to 75!')
 		imgnum = 75
 
 except:
-	print 'No input specified... using defaults'
+	print ('No input specified... using defaults')
 	urlfile = 'apodurl.txt'
 	imgnum = 5	
 
@@ -30,7 +30,7 @@ d = ascii.read(urlfile)
 
 # Check if the number of images is greater than the list provided
 if imgnum > len(d):
-	print 'You do not have as many images as you think you have... truncating to %s!' % len(d)
+	print('You do not have as many images as you think you have... truncating to %s!' % len(d))
 	imgnum = len(d)
 subset = d[-imgnum:]
 
@@ -42,13 +42,13 @@ s2 = '","'.join(s)
 
 # example
 jstr = '{"background":"%s","images":["%s"]}' % (bgcolor,s2)
-url = 'http://koalastothemax.com/?'+base64.b64encode(jstr)
-print '\nURL for custom images:\n'
-print url
-print
+url = 'http://koalastothemax.com/?'+base64.encodestring(('%s' % jstr).encode()).decode().replace('\n', '')
+print('\nURL for custom images:\n')
+print(url)
+print()
 
 # Check URL length
 if len(url) > 8000:
-	print 'Warning! Your URL is likely to fail due to its length of %s characters...' % len(url)
+	print('Warning! Your URL is likely to fail due to its length of %s characters...' % len(url))
 
 ####################################################
