@@ -1,6 +1,6 @@
 # To The Max ![](https://camo.githubusercontent.com/9e95bcdd01de99de22be89233b899f4579e24902/687474703a2f2f696d672e736869656c64732e696f2f62616467652f4275696c7425323061742d253233646f74617374726f2d626c75652e7376673f7374796c653d666c6174)
 
-Simple Python code to wrap around http://koalastothemax.com for custom display of a set of images. 
+Simple Python code to wrap around http://koalastothemax.com for custom display of a set of images. Now in python 3 because old python was refusing to see astropy on Catherine's computer and that seemed too hard to fix. 
 
 ## Input 
 A text file containing a list of URLs to images to be included in the custom set of images. Each URL should be on a new line, as in the example file.
